@@ -110,7 +110,9 @@ A page (or pages) about the data wrangling, including the raw data if appropriat
 Separate pages for each distinct analysis, possibly organized using menus
 R and package versions used in the analyses
 
+# other stuff on this page
 
+Definitely there is a [plotly](plotly.html) stuff!
 
 
 
