@@ -1,0 +1,108 @@
+---
+title: "My awesome website"
+output: 
+  html_document:
+    toc: true
+    toc_float: true
+---
+
+# Getting start
+
+All websites have an **index.html** file – it’s the most common name for the default page and gets served up whenever someone shows up at your site. We’ll start by using this index.Rmd file. This has usual RMD stuff: a title, some headings, some content. Anything you could put in any other RMD file, you can put in here, too. Then, as usual, you can knit to create index.html; you should get something like the following.
+
+NOTE: Web page names are case sensitive, and index.html has to **start with a lower-case “i”**.
+
+# This is Jeff's awesome website
+
+here is a gif of elmo
+
+![](https://media.giphy.com/media/drXGoW1iudhKw/giphy.gif)
+
+* **'![]'**: the exclamation point '!' + []: this is the r markdown approach for embedding images
+
+you can add text
+
+* and lists
+* with extra bullets
+
+you can *italics* and **bold**
+
+this is a [link](https://www.google.com/) to a data science tool. here is a link to [p8105](https://p8105.com). 
+
+you can also still use R!
+```{r}
+library(tidyverse)
+
+plot_df =
+  tibble(
+    x = runif(100),
+    y = 1 + 2*x + rnorm(100))
+  
+plot_df |> 
+  ggplot(aes(x = x, y = y)) +
+  geom_point()
+```
+
+# Here is a new section - images
+
+my cat is ted. this is ted.
+
+![](images/ted.jpg)
+
+also here's the 'backstage' area in AA building:
+
+![](images/backstage.jpg)
+
+* here, the way i'm gonna embed this image is by reading from some local source in my repo. (create a folder 'images', similar to create a folder 'data'. i did not create it here, so just for understanding.)
+* RMD’s default image settings (using ![](image.jpg)) aren’t great. I often use a line of HTML:
+  * **<img src="images/image.jpg" style="width:75%">**
+  * This will load and display images/image.jpg (I usually keep my images inside an images folder to reduce clutter). The style components control things like adding a border or adjusting the image height or width, along with lots of other things – googling around
+
+# website with more than 1 page
+
+Your website usually has more than one page. These pages can be created using the same process as index.html: create an Rmd file and knit to html. Once you have another page (e.g. about.html) you need to link to it from your home page (e.g. using use **[about](about.html)**), or no one will be able to find it.
+
+# having 1 set of rules that apply site-wide
+
+if we want the same styling to exist across all of the different pages - extracting out the most critical header info to a separate file that get applied to every page in your website.
+
+* To do this, we’ll create a single file with all the YAML stuff we need, and at the same time remove extraneous YAML header content from individual Rmd files.
+
+* Create your **_site.yml** file by going to **File > New File > Text file**. Copy the content below, and **save the file as _site.yml** in your project’s home folder.
+
+* in the _site.yml file:
+  * **name: "Yay internet!"**: A title or name for your web page is "Yay internet!"
+  * **output_dir: "."**: The directory where the output files will be saved. In this case, it's set to the current directory (".").
+  * **navbar**: Configuration for a navigation bar on your web page. It contains:
+    * **title:"Home"** The title of the navigation bar is set to "Home."
+    * **right**: Items displayed on the right side of the navigation bar, including:
+      * "About": A link to an "about.html" page.(we create an 'about.rmd' so if we click 'about', it takes us to 'about' page)
+      * An envelope icon linking to an email address (replace <you@youremail.com> with your actual email address).
+      * A GitHub icon linking to your GitHub profile (replace <YOUR_GH_NAME> with your GitHub username).
+  * **output**: Configuration for the HTML output format, with the following settings:
+    * **theme**: The theme for the HTML document, set to "cerulean." This theme will determine the visual style of your web page.
+
+* if you don't have a page that is linked to in the navbar or you want to link it in another way, you can do this: here is the link to [about](about.html) instead of link it in the _site.yml file. You also don't need to use https://www... b/c this page is in the same repo and it is a html page on the same website, so we can directly link it using 'about.html'.
+
+* a link to the [source](https://fontawesome.com/icons) for the site on GitHub
+  
+  
+# R proj recognize your website
+
+* One nice feature is that RStudio will recognize your project as a website, and give you a quick way to build the complete website using the “build website” button. This is really just a shortcut to rmarkdown::render_site(), but it’s still nice.
+
+* If build buttom does not show up, just restart Rstudio.
+
+* If sth in navbar renews, we can open up every rmd and each page separately and reknit, OR we can click **build website** in build button - kinda knit everything in website
+  * This rebuilds the full website, whereas the knit button only rebuilds a page. Rebuilding the site can be useful if you’ve made big changes, like changing the _site.yml.
+
+
+
+  
+
+
+
+
+
+
+
