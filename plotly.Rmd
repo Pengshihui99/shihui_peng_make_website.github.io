@@ -96,3 +96,7 @@ ggplotly(ggp_scatter)
 ```
 
 * **ggplotly()** is like taking the ggplot and convert it into a plotly plot. But the quality of this graphic is not good. hard to explain. you can do this but in this course do not.
+
+# other materials
+
+* Plotly can take a while to get used to; starting with their [library](https://plot.ly/r/) and [reference](https://plot.ly/r/reference/) can help. I also like the [cheatsheet](https://images.plot.ly/plotly-documentation/images/r_cheat_sheet.pdf)

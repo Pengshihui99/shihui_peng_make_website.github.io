@@ -118,4 +118,14 @@ remember this link is case sensitive. if i put 'Plotly.html' then this link will
 
 We can have another page whose link is  'Plotly.html', but the exception is index.html - we have to have an index page and it has to be lower case 'i' index all the time everywhere.
 
+# dashboard
 
+* save the flex_dashboard file in our desktop
+  * if i drag this file to desktop, plots ans everything looks great. but if it is in my repository, it looks bad when knitting it.
+  * b/c in the repo, our rmd will create a html file when knitting, so things in this file will be overwritten by the _site.html
+    * To address this issue, instead of knitting, we can use this command to knit the dashboard: **rmarkdown::render("dashboard.Rmd", output_format = "flexdashboard::flex_dashboard")**. Make sure the output_format is correct. *do this in 'Console'!!*
+    * This will create dashboard.html but not open it in RStudio’s Viewer pane;  you can open the file in a browser instead. Alternatively, using RStudio’s Build pane to Build Website will produce the same results. 
+* **Column {data-width=}** can control the relative width of our columns of charts
+* we can embed interactive graphics in HTML files produced by R Markdown, using dashboard, a collection of related graphics (or tables, or other outputs) that are displayed in a structured way that’s easy to navigate.
+  * File - New File - R markdown - From Template - Flex Dashboard
+* dashboards are pretty supported. check out these links: [overview](https://pkgs.rstudio.com/flexdashboard/articles/flexdashboard.html), [layout discussion](https://pkgs.rstudio.com/flexdashboard/articles/layouts.html), and [examples](https://pkgs.rstudio.com/flexdashboard/articles/examples.html).
