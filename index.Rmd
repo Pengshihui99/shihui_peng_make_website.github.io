@@ -114,6 +114,8 @@ R and package versions used in the analyses
 
 Definitely there is a [plotly](plotly.html) stuff!
 
+remember this link is case sensitive. if i put 'Plotly.html' then this link will not work. 
 
+We can have another page whose link is  'Plotly.html', but the exception is index.html - we have to have an index page and it has to be lower case 'i' index all the time everywhere.
 
 

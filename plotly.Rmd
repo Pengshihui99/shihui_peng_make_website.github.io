@@ -81,3 +81,18 @@ nyc_airbnb |>
           type = 'bar', colors = 'viridis')
 ```
 we use count to get the number of rentals in each neighborhood (i.e. to get the bar height).
+
+# ggplotly
+
+You can convert a ggplot object straight to an interactive graphic using ggplotly.
+
+```{r}
+ggp_scatter =
+  nyc_airbnb |> 
+  ggplot(aes(x = lat, y = long, color = price)) +
+  geom_point()
+
+ggplotly(ggp_scatter)
+```
+
+* **ggplotly()** is like taking the ggplot and convert it into a plotly plot. But the quality of this graphic is not good. hard to explain. you can do this but in this course do not.
