@@ -8,7 +8,7 @@ output:
 * save this flex_dashboard file in our desktop
   * if i drag this file to desktop, plots ans everything looks great. but if it is in my repository, it looks bad when knitting it.
   * b/c in the repo, our rmd will create a html file when knitting, so things in this file will be overwritten by the _site.html
-    * To address this issue, instead of knitting, we can use this command to knit the dashboard: **rmarkdown::render("dashboard.Rmd", output_format = "flexdashboard::flex_dashboard")**. Make sure the output_format is correct.
+    * To address this issue, instead of knitting, we can use this command to knit the dashboard: **rmarkdown::render("dashboard.Rmd", output_format = "flexdashboard::flex_dashboard")**. Make sure the output_format is correct. *do this in 'Console'!!*
     * This will create dashboard.html but not open it in RStudio’s Viewer pane;  you can open the file in a browser instead. Alternatively, using RStudio’s Build pane to Build Website will produce the same results. 
 * **Column {data-width=}** can control the relative width of our columns of charts
 * we can embed interactive graphics in HTML files produced by R Markdown, using dashboard, a collection of related graphics (or tables, or other outputs) that are displayed in a structured way that’s easy to navigate.
